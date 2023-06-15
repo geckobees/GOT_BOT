@@ -7,7 +7,24 @@ const commands = [
         name: 'help',
         description: 'lists all of the commsnds'
     },
-    
+    {
+        name: 'timeout',
+        description: 'timeout a user',
+        options: [
+            {
+                name: 'target-user',
+                description: 'who you want to ban',
+                type: ApplicationCommandOptionType.Mentionable,
+                required: true
+            },
+            {
+                name: 'duration',
+                description: 'how long do you want to ban',
+                type: ApplicationCommandOptionType.String,
+                required: true
+            }
+        ]
+    },
     {
         name: 'chronos',
         description: 'outputs a random chronos edit',
