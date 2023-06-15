@@ -107,7 +107,7 @@ client.on('interactionCreate', (interaction) => {
     if(interaction.commandName === 'edit' && rand100k === 6){
         interaction.reply('https://cdn.discordapp.com/attachments/957723302430933062/1118728531699052565/638E25C6-7B8B-4899-BFBD-C930A2700AEB.mov');
     }
-})
+});
 
 
 client.login(process.env.TOKEN);
