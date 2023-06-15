@@ -11,7 +11,6 @@ module.exports = (client) => {
     const eventName = eventFolder.replace(/\\/g, '/').split('/').pop();
 
     client.on(eventName, async (arg) => {
-        console.log(`Event triggered: ${eventName}`);
       for (const eventFile of eventFiles) {
         const eventFunction = require(eventFile);
         await eventFunction(client, arg);
