@@ -1,7 +1,6 @@
 require('dotenv').config()
-const {Client, IntentsBitField, range, EmbedBuilder, ActivityType, GuildMember} = require("discord.js");
+const { Client, IntentsBitField } = require('discord.js');
 const eventHandler = require('./handlers/eventHandler');
-const registerCommands = require('./events/ready/01registerCommands.js');
 
 
 
