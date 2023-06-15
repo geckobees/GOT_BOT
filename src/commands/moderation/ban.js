@@ -1,6 +1,7 @@
 const {
     ApplicationCommandOptionType,
     PermissionFlagsBits,
+    GuildBan,
   } = require('discord.js');
   
   module.exports = {
@@ -26,6 +27,8 @@ const {
     botPermissions: [PermissionFlagsBits.Administrator],
   
     callback: (client, interaction) => {
-      interaction.reply('ban..');
+      const user = interaction.options.get('target-user').Mentionable;
+      interaction.reply(`banned ${user}`);
+      user.ban()
     },
   };
