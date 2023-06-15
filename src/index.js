@@ -1,5 +1,5 @@
 require('dotenv').config()
-const {Client, IntentsBitField, range, EmbedBuilder, ActivityType} = require("discord.js");
+const {Client, IntentsBitField, range, EmbedBuilder, ActivityType, GuildMember} = require("discord.js");
 
 
 const edits = [
@@ -19,6 +19,13 @@ const edits = [
     'https://cdn.discordapp.com/attachments/947287954127204412/1115117864471507084/lv_7239112968443563269_20230604231917.mp4',
     'https://cdn.discordapp.com/attachments/947287954127204412/1118635812523884626/A8D37F37-5502-4F8D-B70B-77AA93219E10.mov',
     'https://cdn.discordapp.com/attachments/957723302430933062/1036729342828486707/lv_7068185086880926977_20221031155144.mp4',
+    'https://cdn.discordapp.com/attachments/947287954127204412/1118721363868385400/94ABAD9B-7CF8-44E8-B9F6-B8229439CAA9.mov',
+    'https://cdn.discordapp.com/attachments/947287954127204412/1118721373519487096/20ECF422-8ACF-415E-AB1B-12D2E0F31D0B.mov',
+    'https://cdn.discordapp.com/attachments/947287954127204412/1118721353042898985/D2D4A4D2-F462-4171-9953-782361E34FE9.mov',
+    'https://cdn.discordapp.com/attachments/947287954127204412/1118721344209698927/6BAFD0E2-8D22-4067-AE44-2045F2BBF014.mov',
+    'https://cdn.discordapp.com/attachments/947287954127204412/1118721335577821385/16395425-1C6A-42F3-AA7E-986C1D9DFEA1.mov',
+    'https://cdn.discordapp.com/attachments/947287954127204412/1118726550200787095/0AF7E854-1AB1-41B2-9292-33E3500768D2.mov',
+    'https://cdn.discordapp.com/attachments/947287954127204412/1118730603123191869/2D47638D-A206-4800-A26D-A7FC190E9FEB.mov'
     
 
 ];
@@ -57,6 +64,7 @@ client.on('messageCreate', (message) => {
 
 client.on('interactionCreate', (interaction) => {
     const rand = Math.floor(Math.random() * 1000)
+    const rand100k = Math.floor(Math.random() * 100000)
     if (!interaction.isChatInputCommand()) return;
     const random = Math.floor(Math.random() * edits.length);
     if (interaction.commandName === 'chronos'){
@@ -72,7 +80,7 @@ client.on('interactionCreate', (interaction) => {
             .setTitle('chronos')
             .setDescription('GOT_BOT')
             .setColor('Random')
-            .setImage('https://cdn.discordapp.com/attachments/947287954127204412/1116331788550295642/IMG_4576.jpg')
+            .setImage('https://cdn.discordapp.com/attachments/947287954127204412/1118701393704915004/ezgif-4-9016efed02.gif')
             .addFields(
                 {
                     name: 'GOT',
@@ -94,8 +102,14 @@ client.on('interactionCreate', (interaction) => {
         //interaction.reply('Here is an edit brought to you by GOT_BOT!');
         interaction.reply((edits[random]));
         console.log(edits[random])?.String;
-    }else if(interaction.commandName === 'edit' && rand === 5){
-        message.reply('https://cdn.discordapp.com/attachments/957723302430933062/1117977145893986335/FD827974-2A06-4EDB-B6D3-3E89AA9F787A.mov');
+    }
+
+    if(interaction.commandName === 'edit' && rand100k >= 0){
+        interaction.reply('https://cdn.discordapp.com/attachments/957723302430933062/1118728531699052565/638E25C6-7B8B-4899-BFBD-C930A2700AEB.mov');
+    }
+    if (interaction.commandName === 'timeout'){
+        const user = interaction.options.get('target_user');
+        const duration = (interaction.options.get('duration').value * 60 * 1000);
     }
 })
 
