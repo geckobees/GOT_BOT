@@ -14,8 +14,5 @@ client.on('ready', (c) => {
     console.log(`${c.user.ta} is online.`)
 })
 
-const roles = [
-    
-]
 
 client.login(process.env.TOKEN);
