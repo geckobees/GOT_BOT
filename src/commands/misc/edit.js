@@ -14,6 +14,8 @@ const edits = [
     'https://cdn.discordapp.com/attachments/947287954127204412/1117582306392146063/lv_7239073953539476741_20230611183238.mp4',
     'https://cdn.discordapp.com/attachments/947287954127204412/1115117864471507084/lv_7239112968443563269_20230604231917.mp4',
     'https://cdn.discordapp.com/attachments/947287954127204412/1118988469730033704/D03D3646-A9F7-44A4-8312-B3B2B2D4A43A.mov',
+    'https://cdn.discordapp.com/attachments/947287954127204412/1118721344209698927/6BAFD0E2-8D22-4067-AE44-2045F2BBF014.mov',
+    'https://cdn.discordapp.com/attachments/947287954127204412/1119106263712792587/lv_7206868094071868673_20230615094853.mp4'
 
 
 ];
@@ -24,9 +26,7 @@ module.exports = {
     //devOnly: Boolean,
     //testOnly: Boolean,
     //deleted: Boolean,
-
-
-
+    
     callback: (client, interaction) => {
         const random = Math.floor(Math.random() * edits.length);
         interaction.reply(edits[random]);
