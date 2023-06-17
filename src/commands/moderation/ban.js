@@ -28,6 +28,6 @@ const {
   
     callback: (client, interaction) => {
       const user = interaction.options.get('target-user').Mentionable;
-      interaction.reply(`banned ${user}`);uikhydxrgto87iudhruiylhfgdxukihngrdubyvdsiuryghvukyhgrvbsuyeihgrvbiuyeshrguysherdbukoyhsbd kjhcvuhnbefdgrs oniuyrqweVPMIO9
+      interaction.reply(`banned ${user}`); 
     },
   };
