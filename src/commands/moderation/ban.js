@@ -27,7 +27,7 @@ const {
     botPermissions: [PermissionFlagsBits.Administrator],
   
     callback: (client, interaction) => {
-      const user = interaction.options.get('target-user').Mentionable;
-      interaction.reply(`banned ${user}`); 
+      const user = interaction.options.get('target-user');
+      console.log(user);
     },
   };
