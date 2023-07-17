@@ -6,6 +6,11 @@ module.exports = {
     description: 'what?',
 
     callback: (client, interaction) => {
-        interaction.reply('')
+        const embed = new EmbedBuilder()
+        .setTitle('Store/Work')
+        .setDescription('Get or spend Tupa Tix here')
+        .setColor('Random')
+
+        interaction.channel.send({ embeds: [embed] });
     }
 }
