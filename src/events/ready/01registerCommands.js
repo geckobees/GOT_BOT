@@ -41,7 +41,7 @@ module.exports = async (client) => {
         await applicationCommands.create({
           name,
           description,
-          options,
+          options
         });
 
         console.log(`👍 Registered command "${name}."`);
